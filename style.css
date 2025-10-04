@@ -1,0 +1,488 @@
+/* GENEL AYARLAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 400;
+    background: #FAF6E6; /* KREMSİ BEYAZ ARKA PLAN */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* GRADIENT TEXT EFFECT */
+.gradient-text {
+    background: linear-gradient(135deg, #FFC300 0%, #FF8C00 50%, #FF6B00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* FLOATING ANIMATION */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* HEADER STILI */
+.header {
+    background: #FAF6E6; /* KREMSİ BEYAZ */
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 195, 0, 0.2);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* LOGO STILI */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #FFC300;
+    letter-spacing: -0.3px;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-image {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* NAVIGATION STILI */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+    letter-spacing: -0.2px;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FFC300;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.nav a:hover {
+    color: #FF8C00;
+}
+
+/* BUTON STILLERI */
+.signup-btn {
+    background: transparent;
+    color: #FFC300;
+    border: 2px solid #FFC300;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.signup-btn:hover {
+    background: #FFC300;
+    color: #FAF6E6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 195, 0, 0.3);
+}
+
+.login-btn {
+    background: #FFC300;
+    color: #FAF6E6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.login-btn:hover {
+    background: #FF8C00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 195, 0, 0.3);
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(135deg, #FFC300 0%, #FF8C00 100%);
+    color: #FAF6E6;
+    padding: 150px 0 100px;
+    text-align: center;
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(250, 246, 230, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(250, 246, 230, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(250, 246, 230, 0.05) 0%, transparent 50%);
+    animation: particleMove 20s linear infinite;
+}
+
+@keyframes particleMove {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(50px, 50px) rotate(360deg); }
+}
+
+.hero-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-description strong {
+    color: #FAF6E6;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.cta-button {
+    background: #FAF6E6;
+    color: #FF8C00;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 140, 0, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ABOUT SECTION */
+.about {
+    padding: 80px 0;
+    text-align: center;
+    background: #FAF6E6; /* KREMSİ BEYAZ */
+}
+
+.about h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: -0.3px;
+}
+
+.about p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.about p strong {
+    color: #FF8C00;
+}
+
+.secondary-button {
+    background: #FFC300;
+    color: #FAF6E6;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.secondary-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(250, 246, 230, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.secondary-button:hover::before {
+    left: 100%;
+}
+
+.secondary-button:hover {
+    background: #FF8C00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 195, 0, 0.3);
+}
+
+/* FEATURES SECTION */
+.features {
+    padding: 80px 0;
+    background: #FAF6E6; /* KREMSİ BEYAZ */
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: #FBF8F0; /* KIRIK BEYAZ */
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(255, 195, 0, 0.08);
+    border: 1px solid rgba(255, 195, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 195, 0, 0.08), transparent);
+    transition: left 0.5s;
+}
+
+.feature-card:hover::before {
+    left: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 195, 0, 0.15);
+    border-color: rgba(255, 195, 0, 0.3);
+    background: #FFFFFF; /* HOVER'DA SAF BEYAZ */
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 5px 15px rgba(255, 195, 0, 0.3));
+}
+
+.feature-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+    letter-spacing: -0.2px;
+}
+
+.feature-card p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* FOOTER */
+.footer {
+    background: #333;
+    color: #FAF6E6;
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* RESPONSIVE TASARIM */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .about h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about p {
+        font-size: 1.1rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card {
+        padding: 30px 20px;
+    }
+    
+    .logo-image {
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .about h2 {
+        font-size: 1.8rem;
+    }
+    
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .logo-image {
+        height: 30px;
+    }
+}
