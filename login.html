@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - CoCode+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo floating">
+                <img src="cocode_logo.png" alt="CoCode+" class="logo-image">
+                <span class="logo-text">CoCode+</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Anasayfa</a>
+                <a href="nasil_calisir.html">Nasıl Çalışır?</a>
+                <a href="hakkimizda.html">Hakkımızda</a>
+                <a href="iletisim.html">İletişim</a>
+                <button class="signup-btn" onclick="location.href='signup.html'">Kayıt Ol</button>
+                <button class="login-btn" onclick="location.href='login.html'">Giriş Yap</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <section class="about" style="padding-top:120px;">
+        <div class="container">
+            <div style="max-width:500px; margin:0 auto;">
+                <h1 style="text-align:center; font-size:2.5rem; margin-bottom:10px;">
+                    <span class="gradient-text">Giriş Yap</span>
+                </h1>
+                <p style="text-align:center; margin-bottom:40px; font-size:1.1rem; color:#333;">
+                    Hesabınıza giriş yapın ve projelere başlayın! 🚀
+                </p>
+
+                <!-- GİRİŞ FORMU -->
+                <div class="feature-card">
+                    <form class="login-form">
+                        <div class="form-group">
+                            <label for="email">E-posta Adresiniz</label>
+                            <input type="email" id="email" placeholder="ornek@email.com" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Şifreniz</label>
+                            <input type="password" id="password" placeholder="Şifrenizi girin" class="form-input">
+                        </div>
+
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
+                            <label style="display:flex; align-items:center; color:#1F2937; font-size:0.9rem;">
+                                <input type="checkbox" style="margin-right:8px;">
+                                Beni hatırla
+                            </label>
+                            <a href="#" style="color:#F59E0B; text-decoration:none; font-size:0.9rem; font-weight:500;">
+                                Şifremi unuttum?
+                            </a>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" style="width:100%;">Giriş Yap</button>
+
+                        <div style="text-align:center; margin-top:25px; color:#6B7280; font-size:0.9rem;">
+                            Hesabınız yok mu? 
+                            <a href="signup.html" style="color:#F59E0B; text-decoration:none; font-weight:600; margin-left:5px;">
+                                Hemen kayıt olun
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SOSYAL MEDYA İLE GİRİŞ -->
+                <div class="feature-card" style="margin-top:25px; text-align:center;">
+                    <p style="color:#1F2937; margin-bottom:20px; font-weight:500;">Veya sosyal medya ile giriş yapın</p>
+                    
+                    <div class="social-login">
+                        <button class="social-btn google-btn">
+                            <img src="google.png" alt="Google" style="width:20px; height:20px; margin-right:10px;">
+                            Google ile Giriş
+                        </button>
+                        <button class="social-btn github-btn">
+                            <img src="github.png" alt="GitHub" style="width:20px; height:20px; margin-right:10px;">
+                            GitHub ile Giriş
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CoCode+. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <style>
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        /* Form Styles */
+        .login-form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1F2937;
+            font-size: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #E5E7EB;
+            border-radius: 10px;
+            background: white;
+            color: #1F2937;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .form-input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #F59E0B;
+            background: white;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+        }
+
+        .submit-btn {
+            background: #F59E0B;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid #F59E0B;
+        }
+
+        .submit-btn:hover {
+            background: #D97706;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Social Login */
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-btn {
+            padding: 12px 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 10px;
+            background: white;
+            color: #1F2937;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .google-btn:hover {
+            border-color: #DB4437;
+            background: #f8f8f8;
+        }
+
+        .github-btn:hover {
+            border-color: #333;
+            background: #f8f8f8;
+        }
+
+        /* Header Butonları */
+        .signup-btn, .login-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .signup-btn {
+            background: transparent;
+    color: #FFC300;
+    border: 2px solid #FFC300;
+        }
+
+        .login-btn {
+            background: #FFC300;
+            color: #FAF6E6;
+            border: none;
+        }
+
+        .signup-btn:hover {
+            background: #FFC300;
+    color: #FAF6E6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 195, 0, 0.3);
+        }
+
+        .login-btn:hover {
+            background: #FF8C00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 195, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .feature-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+    <script>
+        // Basit giriş formu kontrolü
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                alert('Lütfen tüm alanları doldurun!');
+                return;
+            }
+            
+            // Burada gerçek giriş işlemi yapılacak
+            alert('Giriş başarılı! Yönlendiriliyorsunuz...');
+            // window.location.href = 'index.html'; // Giriş başarılıysa ana sayfaya yönlendir
+        });
+    </script>
+</body>
+</html>
